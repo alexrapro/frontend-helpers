@@ -24,4 +24,4 @@ const removeEmptyProps = (obj: any): any => {
     }
 }
 
-export default removeEmptyProps
+module.exports = removeEmptyProps

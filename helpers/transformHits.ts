@@ -14,4 +14,4 @@ const transformHits = (data?: SearchHit[] | string[]) => {
     }
 }
 
-export default transformHits
+module.exports = transformHits

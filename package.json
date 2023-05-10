@@ -19,6 +19,7 @@
     "@elastic/elasticsearch": "^8.7.0"
   },
   "devDependencies": {
+    "@types/node": "^20.1.2",
     "typescript": "^5.0.4"
   }
 }
