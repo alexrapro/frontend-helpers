@@ -3,10 +3,7 @@
   "version": "1.0.6",
   "description": "Useful Functions",
   "main": "src/index.js",
-  "files": [
-    "dist",
-    "src"
-  ],
+  "files": ["dist"],
   "scripts": {
     "build": "tsc --module commonjs",
     "test": "echo \"Error: no test specified\" && exit 1"
