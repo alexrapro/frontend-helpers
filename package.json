@@ -1,10 +1,13 @@
 {
   "name": "publishing-frontend-helpers",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Useful Functions",
-  "files": ["dist", "src"],
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
-    "build" : "tsc --module commonjs",
+    "build": "tsc --module commonjs",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
