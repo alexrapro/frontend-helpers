@@ -2,6 +2,7 @@
   "name": "publishing-frontend-helpers",
   "version": "1.0.4",
   "description": "Useful Functions",
+  "main": "src/index.js",
   "files": [
     "dist",
     "src"
