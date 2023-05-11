@@ -6,8 +6,6 @@
 
 ## Example
 
-### Example
-
 Remove empty props
 ```javascript
 removeEmptyProps(obj)
