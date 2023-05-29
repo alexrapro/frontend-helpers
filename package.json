@@ -22,7 +22,9 @@
   },
   "homepage": "https://github.com/alexrapro/frontend-helpers#readme",
   "dependencies": {
-    "@elastic/elasticsearch": "^8.7.0"
+    "@elastic/elasticsearch": "^8.7.0",
+    "@types/lodash": "^4.14.195",
+    "lodash": "^4.17.21"
   },
   "devDependencies": {
     "@types/node": "^20.1.2",

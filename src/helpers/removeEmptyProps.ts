@@ -1,27 +1,23 @@
+import _ from 'lodash'
+
 const removeEmptyProps = (obj: any): any => {
-    if (Array.isArray(obj)) {
-        return obj.map((item) => removeEmptyProps(item)).filter((item) => {
-            return item !== undefined && item !== null && item !== "" && item !== false;
-        });
-    } else if (typeof obj === "object" && obj !== null) {
-        const filteredObj = Object.fromEntries(
-            Object.entries(obj).map(([key, value]) => {
-                if (typeof value === "object" && value !== null) {
-                    value = removeEmptyProps(value);
-                }
-                return [key, value];
-            }).filter(([_, value]) => {
-                return value !== undefined && value !== null && value !== ""
-            })
-        );
-        if (Object.keys(filteredObj).length === 0) {
-            return undefined;
-        } else {
-            return filteredObj;
+    return _.transform(obj, function (result, value, key) {
+        if (_.isObject(value)) {
+            value = removeEmptyProps(value);
         }
-    } else {
-        return obj;
-    }
+        if (!_.isEmpty(value)) {
+            result[key] = value;
+            if (_.isArray(value)) {
+                result[key] = _.compact(value);
+            }
+            if (_.isObject(value)) {
+                const isEmptyObject = _.isEmpty(_.omitBy(value, _.isFunction));
+                if (!isEmptyObject) {
+                    result[key] = value;
+                }
+            }
+        }
+    });
 }
 
 export default removeEmptyProps
