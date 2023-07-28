@@ -1,9 +1,9 @@
 import removeEmptyProps from "./helpers/removeEmptyProps";
-import removeDEmptyProps from "./helpers/removeDEmptyProps";
 import transformHits from "./helpers/transformHits";
+import useQueryString from "./hooks/useQueryString";
 
 export {
     removeEmptyProps,
-    removeDEmptyProps,
-    transformHits
+    transformHits,
+    useQueryString
 }
