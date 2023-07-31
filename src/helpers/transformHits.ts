@@ -1,4 +1,4 @@
-import {SearchHit} from "@elastic/elasticsearch/lib/api/types";
+import {SearchHit} from "@opensearch-project/opensearch/api/types";
 
 const transformHits = (data?: SearchHit[] | string[]) => {
     if (data?.length) {

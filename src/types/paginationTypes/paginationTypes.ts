@@ -1,15 +1,15 @@
-import {SearchHitsMetadata, SearchRequest} from "@elastic/elasticsearch/lib/api/types";
+import {SearchHitsMetadata, SearchRequest, SearchSort} from "@opensearch-project/opensearch/api/types";
 
 namespace IPagination {
     export interface config {
         defaultSize?: number
-        defaultSort?: SearchRequest['sort']
+        defaultSort?: SearchSort
     }
 
     export interface root {
         page: number
         size: number
-        sort?: SearchRequest['sort']
+        sort?: SearchSort
     }
 
     export interface query extends root {
@@ -19,7 +19,7 @@ namespace IPagination {
     export interface setPagination {
         from: number;
         size: number;
-        sort?: SearchRequest['sort']
+        sort?: SearchSort
     }
 
     export interface state extends root {
