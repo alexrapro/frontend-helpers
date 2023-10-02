@@ -1,6 +1,5 @@
 import {Client} from "@opensearch-project/opensearch";
 import {readFileSync} from 'fs';
-import {join} from 'path';
 import {SearchHit, SearchTemplateResponse} from "@opensearch-project/opensearch/api/types";
 import {Get, Search} from "@opensearch-project/opensearch/api/requestParams";
 
@@ -15,7 +14,7 @@ class OpenSearchClient extends Client {
                 password: process.env.OPEN_SEARCH_PASSWORD as string
             },
             ssl: {
-                cert: readFileSync(`${process.env.NODE_ENV === "production" ? process.env.OPEN_SEARCH_CERT : join(process.cwd(), 'CA.pem')}`),
+                cert: readFileSync(process.env.OPEN_SEARCH_CERT as string),
                 rejectUnauthorized: false
             }
         })
