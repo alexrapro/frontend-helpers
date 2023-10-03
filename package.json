@@ -15,7 +15,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/alexrapro/frontend-helpers.git"
+    "url": "git+https://github.com/alexrapro/next-frontend-helpers.git"
   },
   "author": "Alexander Urlakher",
   "license": "ISC",
