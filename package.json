@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/alexrapro/next-frontend-helpers#readme",
   "dependencies": {
+    "lodash": "^4.17.21",
     "@opensearch-project/opensearch": "^2.3.1"
   },
   "devDependencies": {
@@ -31,7 +32,6 @@
     "@types/node": "^20.1.2",
     "@types/react": "^18.2.9",
     "next": "^13.4.9",
-    "lodash": "^4.17.21",
     "typescript": "^5.0.4"
   }
 }
