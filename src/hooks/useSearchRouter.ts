@@ -1,7 +1,7 @@
 import {usePathname, useRouter, useSearchParams} from "next/navigation";
 import {useCallback} from "react";
 
-const useSearchRouterNext = (): [query: { [p: string]: string }, setSearchParams: (rawData: {
+const useSearchRouter = (): [query: { [p: string]: string }, setSearchParams: (rawData: {
     [p: string]: string
 }) => void] => {
     const searchParams = useSearchParams()
@@ -21,4 +21,4 @@ const useSearchRouterNext = (): [query: { [p: string]: string }, setSearchParams
     return [query, setSearchParams]
 }
 
-export default useSearchRouterNext
+export default useSearchRouter

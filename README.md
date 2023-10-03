@@ -4,7 +4,7 @@
 - Remove all empty properties of an object
 - Transform OpenSearch Hits to an id array
 
-## Example
+## Functions
 
 Clear object
 ```javascript
@@ -19,4 +19,14 @@ removeEmptyProps(obj)
 Transform OpenSearch Hits to an id array
 ```javascript
 transformHits(searchHit)
+```
+
+## Hooks
+Update the URL without changing a state
+```javascript
+useQueryString()
+```
+Control of URL parameters
+```javascript
+useSearchRouter()
 ```
