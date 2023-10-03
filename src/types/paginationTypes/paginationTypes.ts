@@ -1,4 +1,5 @@
-import {SearchHitsMetadata, SearchRequest, SearchSort} from "@opensearch-project/opensearch/api/types";
+import React from "react";
+import {SearchHitsMetadata, SearchSort} from "@opensearch-project/opensearch/api/types";
 
 namespace IPagination {
     export interface config {
