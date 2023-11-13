@@ -30,9 +30,11 @@
     "lodash": "^4.17.21"
   },
   "devDependencies": {
+    "@tanstack/react-query": "^5.8.2",
     "@types/lodash": "^4.14.195",
     "@types/node": "^20.1.2",
     "@types/react": "^18.2.9",
+    "axios": "^1.6.1",
     "next": "^13.4.9",
     "rimraf": "^5.0.5",
     "typescript": "^5.0.4"
