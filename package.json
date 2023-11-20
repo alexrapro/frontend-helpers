@@ -37,6 +37,6 @@
     "axios": "^1.6.1",
     "next": "^13.4.9",
     "rimraf": "^5.0.5",
-    "typescript": "^5.0.4"
+    "typescript": "^5.2.2"
   }
 }

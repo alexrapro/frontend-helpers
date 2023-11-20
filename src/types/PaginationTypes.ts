@@ -15,6 +15,7 @@ namespace IPagination {
 
     export interface query extends root {
         handleCheckTotal: <T>(hits?: SearchHitsMetadata<T>) => void
+        handlePaginationModel: (model: { pageSize: number, page: number }) => void
     }
 
     export interface setPagination {
