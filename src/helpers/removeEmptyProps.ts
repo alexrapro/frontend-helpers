@@ -7,14 +7,14 @@ const removeEmptyProps = (obj: any): any => {
         }
         if (!_.isEmpty(value) || _.isNumber(value) || _.isBoolean(value)) {
             result[key] = value;
-            if (_.isArray(value)) {
-                result[key] = _.compact(value);
-            }
             if (_.isObject(value)) {
                 const isEmptyObject = _.isEmpty(_.omitBy(value, _.isFunction));
                 if (!isEmptyObject) {
                     result[key] = value;
                 }
+            }
+            if (_.isArray(value)) {
+                result[key] = _.compact(value);
             }
             if(_.isNumber(value)) {
                 result[key] = value
