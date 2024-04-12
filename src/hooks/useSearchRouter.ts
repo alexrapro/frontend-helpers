@@ -13,7 +13,7 @@ const useSearchRouter = (): [query: { [p: string]: string }, setSearchParams: (r
         const newQuery = new URLSearchParams({...rawData})
         const url = pathname + '?' + newQuery.toString()
 
-        router.replace(url, {
+        router.push(url, {
             scroll: false
         })
     }, [searchParams])
