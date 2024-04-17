@@ -14,9 +14,9 @@ const removeEmptyProps = (obj: any): any => {
                 }
             }
             if (_.isArray(value)) {
-                result[key] = _.filter(value, v => !_.isEmpty(v) || v === 0);
+                result[key] = _.filter(value, v => !(_.isEmpty(v) && typeof v !== 'number' && typeof v !== 'boolean'))
             }
-            if(_.isNumber(value)) {
+            if (_.isNumber(value)) {
                 result[key] = value
             }
         }
