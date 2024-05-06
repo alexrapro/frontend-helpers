@@ -18,7 +18,7 @@ const useQueryPagination = (props: IPagination.config = {}): IPagination.query =
 
     const handleCheckTotal = <T>(hits?: SearchHitsMetadata<T>) => {
         if (hits?.total && (page - 1) * size > (hits?.total as SearchTotalHits)?.value) {
-            const newQuery = new URLSearchParams({...query, page: '1', size: '10'})
+            const newQuery = new URLSearchParams({...query, page: '1', size: `${defaultSize}`})
             const url = pathname + '?' + newQuery.toString()
             router.push(url)
         }
