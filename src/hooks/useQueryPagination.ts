@@ -1,23 +1,18 @@
-import {SearchHitsMetadata, SearchSort, SearchTotalHits} from "@opensearch-project/opensearch/api/types";
 import {usePathname, useRouter, useSearchParams} from "next/navigation";
-import qs from "qs";
-import IPagination from "../types/PaginationTypes";
+import IPagination from "../types/pagination.types";
 
 const useQueryPagination = (props: IPagination.config = {}): IPagination.query => {
-    const {
-        defaultSort = [],
-        defaultSize = 10
-    } = props
+    const {defaultSort, defaultSize = 10} = props
     const router = useRouter()
     const searchParams = useSearchParams()
     const query = Object.fromEntries(searchParams.entries())
     const pathname = usePathname()
     const size = Number(query.size) || defaultSize
     const page = Number(query.page) || 1
-    const sort = typeof query?.sort === "string" ? Object.values(qs.parse(query?.sort)) as SearchSort : defaultSort
+    const sort = query.sort || defaultSort
 
-    const handleCheckTotal = <T>(hits?: SearchHitsMetadata<T>) => {
-        if (hits?.total && (page - 1) * size > (hits?.total as SearchTotalHits)?.value) {
+    const handleCheckTotal = ({meta}: IPagination.meta) => {
+        if (meta?.total && (page - 1) * size > meta.total) {
             const newQuery = new URLSearchParams({...query, page: '1', size: `${defaultSize}`})
             const url = pathname + '?' + newQuery.toString()
             router.push(url)

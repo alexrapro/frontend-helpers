@@ -1,14 +1,12 @@
 import {useState} from "react";
-import IPagination from "../types/PaginationTypes";
+import IPagination from "../types/pagination.types";
 
 const useStatePagination = (props: IPagination.config = {}): IPagination.state => {
-    const {
-        defaultSort = [],
-        defaultSize = 10
-    } = props
+    const {defaultSize = 10, defaultSort} = props
     const [pagination, setPagination] = useState<IPagination.setPagination>({
         from: 1,
         size: defaultSize,
+        sort: defaultSort
     })
 
     const handlePaginationModel = (model: { pageSize: number, page: number }) => setPagination({
@@ -19,7 +17,7 @@ const useStatePagination = (props: IPagination.config = {}): IPagination.state =
     return {
         page: (pagination.from - 1),
         size: pagination.size,
-        sort: pagination?.sort || defaultSort,
+        sort: pagination?.sort,
         setPagination,
         handlePaginationModel
     }

@@ -1,17 +1,20 @@
 import removeEmptyProps from "./helpers/removeEmptyProps";
-import transformHits from "./helpers/transformHits";
-import removeUnderscoreProps from "./helpers/removeUnderscoreProps";
-import {filterBuilder} from "./helpers/OSRequestBuilder";
-import objectCleaner from "./helpers/objectCleaner";
 import useQueryString from "./hooks/useQueryString";
 import useSearchRouter from "./hooks/useSearchRouter";
+import useQueryPagination from "./hooks/useQueryPagination";
+import useStatePagination from "./hooks/useStatePagination";
+import IPagination from "./types/pagination.types";
+import {INextSearchParams, IValueOf, IQueryOptions, IQueryConfig} from "./types/useful.types";
 
 export {
     removeEmptyProps,
-    removeUnderscoreProps,
-    transformHits,
     useQueryString,
     useSearchRouter,
-    objectCleaner,
-    filterBuilder
+    useQueryPagination,
+    useStatePagination,
+    IPagination,
+    INextSearchParams,
+    IValueOf,
+    IQueryConfig,
+    IQueryOptions
 }
